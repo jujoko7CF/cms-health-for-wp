@@ -271,6 +271,8 @@ final class CMS_Health_Rest_API {
 	}
 
 	public static function rest_response( WP_REST_Request $request ) {
+		switch_to_locale( 'en_US' );
+
 		$url = home_url();
 		$parsed_url = parse_url( $url );
 		$domain = "{$parsed_url['host']}{$parsed_url['path']}";
