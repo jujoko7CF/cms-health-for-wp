@@ -1,5 +1,5 @@
-<form action='#save-enabled-checks' id='cms-health-check-enabled-checks-form' class='cms-health-check-ajax-options' method='POST'>
-	<?php wp_nonce_field( 'cms-health-check-save-enable-checks' ); ?>
+<form action='#save-enabled-checks' id='cms-health-enabled-checks-form' class='cms-health-ajax-options' method='POST'>
+	<?php wp_nonce_field( 'cms-health-save-enable-checks' ); ?>
 	<table class='form-table' role='presentation'>
 		<tbody>
 		<?php
@@ -33,7 +33,7 @@
 	></p>
 </form>
 
-<div id='cms-health-check-enable-checks-message'>
+<div id='cms-health-enable-checks-message'>
 	<p class='success' style='
 		display: none;
 		background: #fff;
@@ -43,7 +43,7 @@
 		padding: 1em 1.5em;
 		border-left-color: #135e96;
 	'>
-		<?php _e( 'Settings updated.', 'cms-health-check' ); ?>
+		<?php _e( 'Settings updated.', 'cms-health' ); ?>
 	</p>
 	<p class='failed' style='
 		display: none;
@@ -54,6 +54,6 @@
 		padding: 1em 1.5em;
 		border-left-color: #d63638;
 	'>
-		<?php _e( 'Update failed', 'cms-health-check' ); ?>
+		<?php _e( 'Update failed', 'cms-health' ); ?>
 	</p>
 </div>

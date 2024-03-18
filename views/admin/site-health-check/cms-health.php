@@ -3,12 +3,12 @@
 <div class='health-check-body'>
 	<h2>
 		<?php
-			esc_html_e( 'CMS Health Check', 'cms-health-check' ); ?>
+			esc_html_e( 'CMS Health Check', 'cms-health' ); ?>
 	</h2>
 
-	<div id="health-check-cms-health-check" role="presentation" class="health-check-accordion">
+	<div id="health-check-cms-health" role="presentation" class="health-check-accordion">
 		<?php
-			$tabs = apply_filters( 'cms-health-check/settings/sections', array() );
+			$tabs = apply_filters( 'cms-health/settings/sections', array() );
 
 			foreach ( $tabs as $count => $tab ) :
 				?>
