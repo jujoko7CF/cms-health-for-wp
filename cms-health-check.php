@@ -8,7 +8,7 @@
  * Plugin Name:       CMS Health
  * Plugin URI:        https://github.com/cms-health-project
  * Description:       Client plugin for "CMS Health Project". #CFHack2024
- * Version:           0.0.3.poc
+ * Version:           0.0.4.poc
  * Requires PHP:      8.1
  * Author:            jujoko7CF
  * Author URI:        https://jujoko7cf.com
@@ -275,7 +275,9 @@ final class CMS_Health_Rest_API {
 
 		$url = home_url();
 		$parsed_url = parse_url( $url );
-		$domain = "{$parsed_url['host']}{$parsed_url['path']}";
+		$host = $parsed_url['host'] ?? '';
+		$path = $parsed_url['path'] ?? '';
+		$domain = "{$host}{$path}";
 
 		$check_id = $request->get_param( 'check' );
 
