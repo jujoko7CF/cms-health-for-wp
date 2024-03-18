@@ -8,7 +8,7 @@
  * Plugin Name:       CMS Health
  * Plugin URI:        https://github.com/cms-health-project
  * Description:       Client plugin for "CMS Health Project". #CFHack2024
- * Version:           0.0.2.poc
+ * Version:           0.0.3.poc
  * Requires PHP:      8.1
  * Author:            jujoko7CF
  * Author URI:        https://jujoko7cf.com
@@ -303,12 +303,18 @@ final class CMS_Health_Rest_API {
 					'Security' => 'system',
 					default => 'component'
 				} );
-				$single_check_result->setStatus( match ( $result['badge']['label'] ) {
+
+				$status = match ( $result['status'] ) {
 					'recommended' => CheckResultStatus::Warn,
 					'critical' => CheckResultStatus::Fail,
 					'good' => CheckResultStatus::Pass,
 					default => CheckResultStatus::Info
-				} );
+				};
+				$warn = $warn || ( CheckResultStatus::Warn === $status );
+				$fail = $fail || ( CheckResultStatus::Fail === $status );
+
+				$single_check_result->setStatus( $status );
+
 				$single_check_result->setObservedValue( '' );
 				$single_check_result->setOutput( $result['label'] );
 				$single_check_result->setTime( new DateTime() );
