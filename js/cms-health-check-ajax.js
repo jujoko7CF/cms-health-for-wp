@@ -1,4 +1,3 @@
-var tersfdasdf;
 jQuery( document ).ready( function() {
 	jQuery( '.cms-health-check-ajax-options' ).on( 'submit', function( e ) {
 		e.preventDefault();
